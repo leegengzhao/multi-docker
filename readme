@@ -1,0 +1,18 @@
+Complete docker dev work flow using github and travis.
+
+Work flow,
+- push code change to github,
+- travis kickoff dev build, and run tests,
+- if tests are successful, travis runs production build,
+- travis pushes docker images to dockerhub.
+
+To deploy production build to AWS,
+- uncomment the deploy section of travis.yml, which will sends Docker.run.aws.json to AWS which will know what to do to deploy.
+- see AWS configuration cheat sheet for creating and setting up AWS account and required services including Elastic beanstalk (for react client, api, worker, and nginx), Rds for postgress database, and Elastic cache for Redis.
+
+For development,
+- get code from github
+- run docker-compose up --build
+- develop and test
+- push new code to github
+
